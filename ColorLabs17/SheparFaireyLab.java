@@ -31,16 +31,42 @@ public class SheparFaireyLab
          Picture me1 = new Picture("images/beach.jpg");
          Picture me2 = new Picture("images/beach.jpg");
          
+         Pixel[] mepix;
+         mepix = me.getPixels();
          /**
           * method 1 change
           * 
           */
-         
+        
          /**
           * method 2 change
           * 
           */
-         
+        int i = 0;
+        int intensity;
+        int minintensity;
+        int maxintensity;
+        for (Pixel pixelObj : mepix){
+            
+        }
+        for (Pixel pixelObj : mepix)
+        {
+            //set the red value of the current pixel to the new value
+            intensity = mepix[i].getRed() + mepix[i].getBlue() + mepix[i].getGreen();
+            if (intensity <= 191){
+                
+            }
+            else if (intensity <= 382){
+                
+            }
+            else if (intensity <= 573){
+                
+            }
+            else{
+                
+            }
+            i++;
+        }
          /**
           * custom color palette
           */

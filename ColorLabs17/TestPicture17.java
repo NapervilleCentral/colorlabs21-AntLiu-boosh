@@ -78,6 +78,7 @@ public class TestPicture17
   * @param none
   * @return none
   */
+ /*
      int i = 0;
  
     for (Pixel pixelObj : lionpix)
@@ -95,10 +96,11 @@ public class TestPicture17
   * @return none
   */
 
-/*
+
 int value;
+int i = 0;
 final double  FACTOR = .5;
-    for (Pixel pixelObj : pixels)
+    for (Pixel pixelObj : lionpix)
     {
 
         //get the redvalue
@@ -106,15 +108,15 @@ final double  FACTOR = .5;
         //System.out.println(value);
 
         //decrease the red value by 50%
-        
+        lionpix[i].setRed((int)(value * FACTOR));
+        i++;
         //set the red value of the current pixel to the new value
         
 
     }
     // use new picture when changing or it will make changes to 
     // pic you already changed
-    ferris1.explore();
-    ferris2.explore();
+    lion.explore();
 
   /**/ 
     //write/save a picture as a file
