@@ -19,20 +19,21 @@ public class SheparFaireyLab
     {
         
          //opens selfie picture 
-          /**/
+        /*
          String fileName = FileChooser.pickAFile();
          Picture pictObj = new Picture(fileName);
          pictObj.explore();
-         
+         */
          //relative path
          Picture apic = new Picture("images\\beach.jpg");
          //change with selfie picture
-         Picture me = new Picture("images/beach.jpg");
+         Picture me = new Picture("images/rat.jpg");
          Picture me1 = new Picture("images/beach.jpg");
          Picture me2 = new Picture("images/beach.jpg");
          
          Pixel[] mepix;
          mepix = me.getPixels();
+         me.explore();
          /**
           * method 1 change
           * 
@@ -44,33 +45,39 @@ public class SheparFaireyLab
           */
         int i = 0;
         int intensity;
-        int minintensity;
-        int maxintensity;
+        int minintensity = 765;
+        int maxintensity = 0;
         for (Pixel pixelObj : mepix){
-            
+            intensity = mepix[i].getRed() + mepix[i].getBlue() + mepix[i].getGreen();
+            if (intensity > maxintensity){
+                maxintensity = intensity;
+            }
+            else if (intensity < minintensity){
+                minintensity = intensity;
+            }
         }
         for (Pixel pixelObj : mepix)
         {
             //set the red value of the current pixel to the new value
             intensity = mepix[i].getRed() + mepix[i].getBlue() + mepix[i].getGreen();
-            if (intensity <= 191){
-                
+            if (intensity <= maxintensity / 4){
+                mepix[i].setColor(new Color(0,0,0));
             }
-            else if (intensity <= 382){
-                
+            else if (intensity <= maxintensity / 2){
+                mepix[i].setColor(new Color(0,0,255));
             }
-            else if (intensity <= 573){
-                
+            else if (intensity <= (maxintensity * 3) / 4){
+                mepix[i].setColor(new Color(255,0,0));
             }
             else{
-                
+                mepix[i].setColor(new Color(255,255,255));
             }
             i++;
         }
          /**
           * custom color palette
           */
-
+        me.explore();  
          
     }//main       
 }//class
