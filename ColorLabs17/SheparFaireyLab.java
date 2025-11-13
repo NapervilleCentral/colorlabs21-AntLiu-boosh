@@ -30,7 +30,9 @@ public class SheparFaireyLab
          Picture me = new Picture("images/rat.jpg");
          Picture me1 = new Picture("images/rat.jpg");
          Picture me2 = new Picture("images/rat.jpg"); 
-         Picture me3 = new Picture("images/rat.jpg");
+         Picture me3 = new Picture("images/rat2.jpg");
+         Picture me4 = new Picture("images/rat2.jpg");
+         Picture me5 = new Picture("images/rat2.jpg");
          
          Pixel[] mepix;
          mepix = me.getPixels();
@@ -40,6 +42,10 @@ public class SheparFaireyLab
          mepix2 = me2.getPixels();
          Pixel[] mepix3;
          mepix3 = me3.getPixels();
+         Pixel[] mepix4;
+         mepix4 = me4.getPixels();
+         Pixel[] mepix5;
+         mepix5 = me5.getPixels();
          //me.explore();
          
         int i = 0;
@@ -116,7 +122,7 @@ public class SheparFaireyLab
           * custom color palette
           * CAT
           */
-         
+        //me1.explore();
         i = 0;
         intensity = 0;
         minintensity = 765;
@@ -136,20 +142,21 @@ public class SheparFaireyLab
             //set the red value of the current pixel to the new value
             intensity = mepix2[i].getRed() + mepix2[i].getBlue() + mepix2[i].getGreen();
             if (intensity <= maxintensity / 4){
-                mepix2[i].setColor(new Color(0, 36, 38));
+                mepix2[i].setColor(new Color(167, 0, 0));
             }
             else if (intensity <= maxintensity / 2){
-                mepix2[i].setColor(new Color(0, 61, 64));
+                mepix2[i].setColor(new Color(217, 0, 0));
             }
             else if (intensity <= (maxintensity * 3) / 4){
-                mepix2[i].setColor(new Color(7, 107, 112));
+                mepix2[i].setColor(new Color(255, 112, 112));
             }
             else{
-                mepix2[i].setColor(new Color(2, 136, 142));
+                mepix2[i].setColor(new Color(255, 164, 164));
             }
             i++;
         }
-        me2.explore();
+        //me2.explore();
+        me2.write("images/cat.jpg");
         /**
          * custom color Palette
          * Not CAT
@@ -168,6 +175,7 @@ public class SheparFaireyLab
             }
             i++;
         }
+        
         i=0;
         for (Pixel pixelObj : mepix3){
             //set the red value of the current pixel to the new value
@@ -186,5 +194,58 @@ public class SheparFaireyLab
             }
             i++;
         }
+        me3.explore();
+        
+        i=0;
+        for (Pixel pixelObj : mepix4){
+            //set the red value of the current pixel to the new value
+            intensity = mepix4[i].getRed() + mepix4[i].getBlue() + mepix4[i].getGreen();
+            if (intensity <= maxintensity / 5){
+                mepix4[i].setColor(new Color(1, 46, 52));
+            }
+            else if (intensity <= (maxintensity * 2) / 5){
+                mepix4[i].setColor(new Color(14, 70, 78));
+            }
+            else if (intensity <= (maxintensity * 3) / 5){
+                mepix4[i].setColor(new Color(36, 96, 104));
+            }
+            else if (intensity <= (maxintensity * 4) / 5){
+                mepix4[i].setColor(new Color(66, 122, 130));
+            }
+            else{
+                mepix4[i].setColor(new Color(105, 150, 156));
+            }
+            i++;
+        }
+        me4.explore();
+        
+        i=0;
+        for (Pixel pixelObj : mepix5){
+            //set the red value of the current pixel to the new value
+            intensity = mepix5[i].getRed() + mepix5[i].getBlue() + mepix5[i].getGreen();
+            if (intensity <= maxintensity / 7){
+                mepix5[i].setColor(new Color(0, 0, 0));
+            }
+            else if (intensity <= (maxintensity * 2) / 7){
+                mepix5[i].setColor(new Color(85, 0, 0));
+            }
+            else if (intensity <= (maxintensity * 3) / 7){
+                mepix5[i].setColor(new Color(14, 70, 78));
+            }
+            else if (intensity <= (maxintensity * 4) / 7){
+                mepix5[i].setColor(new Color(170, 57, 57));
+            }
+            else if (intensity <= (maxintensity * 5) / 7){
+                mepix5[i].setColor(new Color(66, 122, 130));
+            }
+            else if (intensity <= (maxintensity * 6) / 7){
+                mepix5[i].setColor(new Color(255, 170, 170));
+            }
+            else{
+                mepix5[i].setColor(new Color(200, 255, 255));
+            }
+            i++;
+        }
+        me5.explore();
     }//main       
 }//class
