@@ -33,6 +33,7 @@ public class SheparFaireyLab
          Picture me3 = new Picture("images/rat2.jpg");
          Picture me4 = new Picture("images/rat2.jpg");
          Picture me5 = new Picture("images/rat2.jpg");
+         Picture me6 = new Picture("images/rat2.jpg");
          
          Pixel[] mepix;
          mepix = me.getPixels();
@@ -46,6 +47,8 @@ public class SheparFaireyLab
          mepix4 = me4.getPixels();
          Pixel[] mepix5;
          mepix5 = me5.getPixels();
+         Pixel[] mepix6;
+         mepix6 = me6.getPixels();
          //me.explore();
          
         int i = 0;
@@ -141,13 +144,13 @@ public class SheparFaireyLab
         for (Pixel pixelObj : mepix2){
             //set the red value of the current pixel to the new value
             intensity = mepix2[i].getRed() + mepix2[i].getBlue() + mepix2[i].getGreen();
-            if (intensity <= maxintensity / 4){
+            if (intensity <= (maxintensity - minintensity) / 4){
                 mepix2[i].setColor(new Color(167, 0, 0));
             }
-            else if (intensity <= maxintensity / 2){
+            else if (intensity <= (maxintensity - minintensity) / 2){
                 mepix2[i].setColor(new Color(217, 0, 0));
             }
-            else if (intensity <= (maxintensity * 3) / 4){
+            else if (intensity <= ((maxintensity - minintensity) * 3) / 4){
                 mepix2[i].setColor(new Color(255, 112, 112));
             }
             else{
@@ -180,13 +183,13 @@ public class SheparFaireyLab
         for (Pixel pixelObj : mepix3){
             //set the red value of the current pixel to the new value
             intensity = mepix3[i].getRed() + mepix3[i].getBlue() + mepix3[i].getGreen();
-            if (intensity <= maxintensity / 4){
+            if (intensity <= (maxintensity - minintensity) / 4){
                 mepix3[i].setColor(new Color(0, 36, 38));
             }
-            else if (intensity <= maxintensity / 2){
+            else if (intensity <= (maxintensity - minintensity) / 2){
                 mepix3[i].setColor(new Color(0, 61, 64));
             }
-            else if (intensity <= (maxintensity * 3) / 4){
+            else if (intensity <= ((maxintensity - minintensity) * 3) / 4){
                 mepix3[i].setColor(new Color(7, 107, 112));
             }
             else{
@@ -200,16 +203,16 @@ public class SheparFaireyLab
         for (Pixel pixelObj : mepix4){
             //set the red value of the current pixel to the new value
             intensity = mepix4[i].getRed() + mepix4[i].getBlue() + mepix4[i].getGreen();
-            if (intensity <= maxintensity / 5){
+            if (intensity <= (maxintensity - minintensity) / 5){
                 mepix4[i].setColor(new Color(1, 46, 52));
             }
-            else if (intensity <= (maxintensity * 2) / 5){
+            else if (intensity <= ((maxintensity - minintensity) * 2) / 5){
                 mepix4[i].setColor(new Color(14, 70, 78));
             }
-            else if (intensity <= (maxintensity * 3) / 5){
+            else if (intensity <= ((maxintensity - minintensity) * 3) / 5){
                 mepix4[i].setColor(new Color(36, 96, 104));
             }
-            else if (intensity <= (maxintensity * 4) / 5){
+            else if (intensity <= ((maxintensity - minintensity) * 4) / 5){
                 mepix4[i].setColor(new Color(66, 122, 130));
             }
             else{
@@ -223,22 +226,22 @@ public class SheparFaireyLab
         for (Pixel pixelObj : mepix5){
             //set the red value of the current pixel to the new value
             intensity = mepix5[i].getRed() + mepix5[i].getBlue() + mepix5[i].getGreen();
-            if (intensity <= maxintensity / 7){
+            if (intensity <= (maxintensity - minintensity) / 7){
                 mepix5[i].setColor(new Color(0, 0, 0));
             }
-            else if (intensity <= (maxintensity * 2) / 7){
+            else if (intensity <= ((maxintensity - minintensity) * 2) / 7){
                 mepix5[i].setColor(new Color(85, 0, 0));
             }
-            else if (intensity <= (maxintensity * 3) / 7){
+            else if (intensity <= ((maxintensity - minintensity) * 3) / 7){
                 mepix5[i].setColor(new Color(14, 70, 78));
             }
-            else if (intensity <= (maxintensity * 4) / 7){
+            else if (intensity <= ((maxintensity - minintensity) * 4) / 7){
                 mepix5[i].setColor(new Color(170, 57, 57));
             }
-            else if (intensity <= (maxintensity * 5) / 7){
+            else if (intensity <= ((maxintensity - minintensity) * 5) / 7){
                 mepix5[i].setColor(new Color(66, 122, 130));
             }
-            else if (intensity <= (maxintensity * 6) / 7){
+            else if (intensity <= ((maxintensity - minintensity) * 6) / 7){
                 mepix5[i].setColor(new Color(255, 170, 170));
             }
             else{
@@ -247,5 +250,38 @@ public class SheparFaireyLab
             i++;
         }
         me5.explore();
+        
+        i=0;
+        for (Pixel pixelObj : mepix6){
+            //set the red value of the current pixel to the new value
+            intensity = mepix6[i].getRed() + mepix6[i].getBlue() + mepix6[i].getGreen();
+            if (intensity <= (maxintensity - minintensity) / 15){
+                mepix6[i].setColor(new Color(0, 0, 0));
+            }
+            else if (intensity <= ((maxintensity - minintensity)) / 7){
+                mepix6[i].setColor(new Color(30, 0, 0));
+            }
+            else if (intensity <= ((maxintensity - minintensity) * 2) / 7){
+                mepix6[i].setColor(new Color(85, 0, 0));
+            }
+            else if (intensity <= ((maxintensity - minintensity) * 3) / 7){
+                mepix6[i].setColor(new Color(14, 70, 78));
+            }
+            else if (intensity <= ((maxintensity - minintensity) * 4) / 7){
+                mepix6[i].setColor(new Color(170, 57, 57));
+            }
+            else if (intensity <= ((maxintensity - minintensity) * 5) / 7){
+                mepix6[i].setColor(new Color(66, 122, 130));
+            }
+            else if (intensity <= ((maxintensity - minintensity) * 6) / 7){
+                mepix6[i].setColor(new Color(255, 170, 170));
+            }
+            else{
+                mepix6[i].setColor(new Color(200, 255, 255));
+            }
+            i++;
+        }
+        me6.explore();
+        me.write("images/SFmyFinal.jpg");
     }//main       
 }//class
