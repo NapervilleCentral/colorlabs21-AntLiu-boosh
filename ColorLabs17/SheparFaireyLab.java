@@ -198,6 +198,7 @@ public class SheparFaireyLab
             i++;
         }
         me3.explore();
+        me3.write("images/SFTry1.jpg");
         
         i=0;
         for (Pixel pixelObj : mepix4){
@@ -221,6 +222,7 @@ public class SheparFaireyLab
             i++;
         }
         me4.explore();
+        me4.write("images/SFTry2.jpg");
         
         i=0;
         for (Pixel pixelObj : mepix5){
@@ -250,6 +252,7 @@ public class SheparFaireyLab
             i++;
         }
         me5.explore();
+        me5.write("images/SFTry3.jpg");
         
         i=0;
         for (Pixel pixelObj : mepix6){
@@ -282,6 +285,6 @@ public class SheparFaireyLab
             i++;
         }
         me6.explore();
-        me.write("images/SFmyFinal.jpg");
+        me6.write("images/SFmyFinal.jpg");
     }//main       
 }//class
