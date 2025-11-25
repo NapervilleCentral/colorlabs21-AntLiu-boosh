@@ -27,8 +27,8 @@ public class SheparFaireyLab
          //relative path
          Picture apic = new Picture("images\\beach.jpg");
          //change with selfie picture
-         Picture me = new Picture("images/rat.jpg");
-         Picture me1 = new Picture("images/rat.jpg");
+         Picture me = new Picture("images/rat2.jpg");
+         Picture me1 = new Picture("images/rat2.jpg");
          Picture me2 = new Picture("images/rat.jpg"); 
          Picture me3 = new Picture("images/rat2.jpg");
          Picture me4 = new Picture("images/rat2.jpg");
@@ -60,7 +60,7 @@ public class SheparFaireyLab
           * method 1 change
           * 
           */
-        /*
+        
         for (Pixel pixelObj : mepix1)
         {
             //set the red value of the current pixel to the new value
@@ -80,12 +80,13 @@ public class SheparFaireyLab
             i++;
         }
         me1.explore();
-        */
+        me1.write("images/Method1Rat.jpg");
+        
          /**
           * method 2 change
           * 
           */
-        /* 
+        
         i = 0;
         intensity = 0;
         minintensity = 765;
@@ -119,8 +120,10 @@ public class SheparFaireyLab
             }
             i++;
         }
-        me.explore();  
-        */
+        me.explore();
+        me.write("images/Method2Rat.jpg");
+        
+        
          /**
           * custom color palette
           * CAT
@@ -131,7 +134,7 @@ public class SheparFaireyLab
         minintensity = 765;
         maxintensity = 0;
         for (Pixel pixelObj : mepix2){
-            intensity = mepix2[i].getRed() + mepix[i].getBlue() + mepix[i].getGreen();
+            intensity = mepix2[i].getRed() + mepix2[i].getBlue() + mepix2[i].getGreen();
             if (intensity > maxintensity){
                 maxintensity = intensity;
             }
@@ -158,7 +161,7 @@ public class SheparFaireyLab
             }
             i++;
         }
-        //me2.explore();
+        me2.explore();
         me2.write("images/cat.jpg");
         /**
          * custom color Palette
