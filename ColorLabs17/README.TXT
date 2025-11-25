@@ -12,12 +12,17 @@ AUTHORS:
 USER INSTRUCTIONS:
 
 Who- Critique
+Try 1:
+Nick: 4 color palate not enough detail
 
-Nick: 4 color pallete not enough detail
-me: lots of big chunks, so added extra color in the middle
+me: need to break up the big chunks, so adding more colors to narrow the ranges of each color would probably fix that
 
+Try 2:
 Nick: too narrow range of colors
-added red range to add contrast
 
+me: blue is really boring, so an added red range to add contrast would probably work well, because it does work in the original Shepard Fairey 
+
+Try 3:
 Nick: makes background look odd
-felt background oddness unavoidable so just tried to add more layering for the big blobs that still exist (hair)
+
+me: felt background oddness unavoidable with the two color system so just added final layer of color for darker colors and fixed lightest color to be tinted with blue, rather than being pure white. 

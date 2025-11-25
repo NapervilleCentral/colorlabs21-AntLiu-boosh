@@ -250,7 +250,7 @@ public class SheparFaireyLab
                 mepix5[i].setColor(new Color(255, 170, 170));
             }
             else{
-                mepix5[i].setColor(new Color(200, 255, 255));
+                mepix5[i].setColor(new Color(255, 255, 255));
             }
             i++;
         }
