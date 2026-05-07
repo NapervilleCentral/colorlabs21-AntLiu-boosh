@@ -30,10 +30,12 @@ public class posterProject
         copyToCanvas(schizo1, canvas, 4000, 0);
         compressRight(schizo, schizo.getWidth()/2);
         copyToCanvas(schizo, canvas, 0, 1500);
-        mirrorX(schizo2, 0, 2000, 0, 1000);
         filter(schizo2);
         compressRight(schizo2, 1500);
         copyToCanvas(schizo2, canvas, 2000, 1500);
+        corrupt(schizo3);
+        blend(schizo3,schizo);
+        copyToCanvas(schizo3, canvas, 4000, 1500);
         /*
         Pixel[] tempix;
         tempix = temple.getPixels();
@@ -44,7 +46,7 @@ public class posterProject
         */
         canvas.explore();
         //
-        
+        canvas.write("images/FinalCollage.jpg");
     }
     
     public static void mirrorY(Picture source){
@@ -84,20 +86,6 @@ public class posterProject
             for (int col = 0; col < mirrorPoint; col++){
                 upPixel = source.getPixel(row,col);
                 downPixel= source.getPixel(row, height - 1 - col);
-                upPixel.setColor(downPixel.getColor());
-            }
-        }
-    }
-    
-    public static void mirrorX(Picture source, int y1, int y2, int x1, int x2){
-        int height = y2 - y1;
-        int mirrorPoint = height/2;
-        Pixel upPixel = null;
-        Pixel downPixel = null;
-        for (int row = x1; row < y2; row++){
-            for (int col = y1; col < mirrorPoint; col++){
-                upPixel = source.getPixel(x1 + row,  y1 + col);
-                downPixel = source.getPixel(x1 + row, y2 - 1 - col);
                 upPixel.setColor(downPixel.getColor());
             }
         }
@@ -159,6 +147,66 @@ public class posterProject
                 }
                 Color grey = new Color(average + 40, average, average - 40);
                 sourcePix.setColor(grey);
+            }
+        }
+    }
+    
+   public static void filter2(Picture source){
+        Pixel sourcePix = null;
+        for (int sourceX = 0; sourceX < source.getWidth(); sourceX++){
+            for (int sourceY = 0; sourceY < source.getHeight(); sourceY++){
+                sourcePix = source.getPixel(sourceX, sourceY);
+                int average = (sourcePix.getRed() + sourcePix.getBlue() + sourcePix.getGreen())/3;
+                if (average > 215){
+                    average = 215;
+                }
+                else if(average < 40){
+                    average = 40;
+                }
+                Color grey = new Color(average + 20, average - 20, average - 20);
+                sourcePix.setColor(grey);
+            }
+        }
+    }
+    
+    public static void corrupt(Picture source){
+        Random randy = new Random();
+        Pixel hold = null;
+        Pixel change = null;
+        for (int i = 0; i < 150000; i++){
+            int rand1 = randy.nextInt(source.getWidth() - 1), rand2 = randy.nextInt(source.getHeight() - 1);
+            int rand3 = randy.nextInt(source.getWidth() - 1), rand4 = randy.nextInt(source.getHeight() - 1);
+            
+            hold = source.getPixel((rand1), (rand2));
+            change = source.getPixel((rand3), (rand4));
+            if (randy.nextInt(10) < 8)
+                change.setColor(hold.getColor());
+            else{
+                change.setColor(new Color(randy.nextInt(255), randy.nextInt(255), randy.nextInt(255)));
+            }
+            
+            hold = source.getPixel((rand1 + 1), (rand2));
+            change = source.getPixel((rand3 + 1), (rand4));
+            if (randy.nextInt(10) < 8)
+                change.setColor(hold.getColor());
+            else{
+                change.setColor(new Color(randy.nextInt(255), randy.nextInt(255), randy.nextInt(255)));
+            }
+            
+            hold = source.getPixel((rand1), (rand2 + 1));
+            change = source.getPixel((rand3), (rand4 + 1));
+            if (randy.nextInt(10) < 8)
+                change.setColor(hold.getColor());
+            else{
+                change.setColor(new Color(randy.nextInt(255), randy.nextInt(255), randy.nextInt(255)));
+            }
+            
+            hold = source.getPixel((rand1 + 1), (rand2 + 1));
+            change = source.getPixel((rand3 + 1), (rand4 + 1));
+            if (randy.nextInt(10) < 9)
+                change.setColor(hold.getColor());
+            else{
+                change.setColor(new Color(randy.nextInt(255), randy.nextInt(255), randy.nextInt(255)));
             }
         }
     }
